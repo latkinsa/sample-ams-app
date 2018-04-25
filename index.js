@@ -23,7 +23,7 @@ app.get('/save', routes.save);
 
 app.get('/service/', service.index);
 app.get('/service/invoke', service.invoke);
-app.get('/service/create', service.create);
+app.post('/service/create', service.create);
 app.get('/service/delete', service.delete);
 app.get('/service/configure', service.configure);
 app.get('/service/save', service.save);
