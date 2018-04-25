@@ -16,17 +16,19 @@ app.use(errorhandler()); // dev only
 //app.use(app.router);
 
 app.get('/', routes.index);
-app.get('/install', routes.install);
-app.get('/uninstall', routes.uninstall);
-app.get('/configure', routes.configure);
-app.get('/save', routes.save);
+app.get('/status', routes.status);
+app.post('/install', routes.install);
+app.post('/uninstall', routes.uninstall);
+app.post('/configure', routes.configure);
+app.post('/save', routes.save);
 
 app.get('/service/', service.index);
-app.get('/service/invoke', service.invoke);
+app.get('/service/status', service.status);
+app.post('/service/invoke', service.invoke);
 app.post('/service/create', service.create);
-app.get('/service/delete', service.delete);
-app.get('/service/configure', service.configure);
-app.get('/service/save', service.save);
+app.post('/service/delete', service.delete);
+app.post('/service/configure', service.configure);
+app.post('/service/save', service.save);
 
 
 http.createServer(app).listen(app.get('port'), function(){
